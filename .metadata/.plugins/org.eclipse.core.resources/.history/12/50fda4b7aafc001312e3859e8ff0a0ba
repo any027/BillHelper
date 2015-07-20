@@ -1,0 +1,112 @@
+package com.example.quadraticequationsolver;
+
+package com.example.quadraticsolver;
+
+import android.app.Activity;
+import android.app.ActionBar;
+import android.app.Fragment;
+import android.content.ActivityNotFoundException;
+import android.content.Intent;
+import android.os.Bundle;
+import android.speech.RecognizerIntent;
+import android.text.Editable;
+import android.text.Html;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
+import android.os.Build;
+
+public class MainActivity extends Activity {
+	private TextView equationFormat;
+	private EditText a_field;
+	private EditText b_field;
+	private EditText c_field;
+	private Button solve;
+	private TextView solution;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        if (savedInstanceState == null) {
+            getFragmentManager().beginTransaction()
+                    .add(R.id.container, new PlaceholderFragment())
+                    .commit();
+        }
+        equationFormat = (TextView)findViewById(R.id.equationFormat);
+        a_field = (EditText)findViewById(R.id.A);
+        b_field = (EditText)findViewById(R.id.B);
+        c_field = (EditText)findViewById(R.id.C);
+        solve = (Button)findViewById(R.id.solveButton);
+        solution = (TextView)findViewById(R.id.solution);
+        
+        equationFormat.setText(Html.fromHtml("Ax<sup>2</sup> + Bx + C"));
+        
+        
+        solve.setOnClickListener(new View.OnClickListener() {
+ 
+            @Override
+            public void onClick(View v) {
+            	String a1 = (a_field.getText()).toString();
+            	String b1 = (b_field.getText()).toString();
+            	String c1 = (c_field.getText()).toString();
+            	float a = Float.parseFloat(a1);
+            	float b = Float.parseFloat(b1);
+            	float c = Float.parseFloat(c1);
+            	//float radical = (float) Math.sqrt(Math.pow(b, 2) - 4*a*c);
+            	float result1 = (float) ((-b + Math.sqrt(Math.pow(b, 2) - 4*a*c))/(2*a));
+            	float result2 = (float) ((-b - Math.sqrt(Math.pow(b, 2) - 4*a*c))/(2*a));
+            	solution.setText("x = " + result1 + ",\n" + result2);
+            	
+            }
+ 
+       
+
+        });
+    
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+        if (id == R.id.action_settings) {
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    /**
+     * A placeholder fragment containing a simple view.
+     */
+    public static class PlaceholderFragment extends Fragment {
+
+        public PlaceholderFragment() {
+        }
+
+        @Override
+        public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                Bundle savedInstanceState) {
+            View rootView = inflater.inflate(R.layout.fragment_main, container, false);
+            return rootView;
+        }
+    }
+
+}

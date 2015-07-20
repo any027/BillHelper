@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Bill helper</string>
+    <string name="title_section1">Home Screen</string>
+    <string name="title_section2">How much do I tip?</string>
+    <string name="title_section3">How much did I tip?</string>
+    <string name="title_section4">I want to split the Bill</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_example">Example action</string>
+    <string name="action_settings">Settings</string>
+    <string name="welcome">Welcome to Bill Helper!</string>
+    <string name="welcome_question">What do you need help with?</string>
+    <string name="did_i_tip">How much did I tip?</string>
+    <string name="do_i_tip">How much is tip?</string>
+    <string name="splitting">I want to split the bill</string>
+    <string name="bill_total">What was the total?</string>
+    <string name="percent_tip">How much do you want to tip?</string>
+    <string name="my_part">"How much was your part of the bill?</string>
+    <string name="tax">What is your tax%?</string>
+
+</resources>

@@ -1,0 +1,65 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.billhelper.MainActivity$PlaceholderFragment" >
+
+    <TextView
+        android:id="@+id/welcomeIntroduction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/welcome"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <ImageView
+        android:id="@+id/welcomeCat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/welcomeIntroduction"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="19dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/helper_cat" />
+
+    <TextView
+        android:id="@+id/welcomeQuestion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/welcomeCat"
+        android:layout_centerHorizontal="true"
+        android:text="@string/welcome_question"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <Button
+        android:id="@+id/didITipButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/splitBillButton"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="71dp"
+        android:text="@string/splitting" />
+
+    <Button
+        android:id="@+id/splitBillButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/didITipButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="29dp"
+        android:text="@string/did_i_tip" />
+
+    <Button
+        android:id="@+id/doITipButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/splitBillButton"
+        android:layout_alignLeft="@+id/splitBillButton"
+        android:layout_marginBottom="24dp"
+        android:text="@string/do_i_tip" />
+
+</RelativeLayout>

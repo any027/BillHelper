@@ -1,0 +1,81 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.billhelper.MainActivity$PlaceholderFragment" >
+
+    <TextView
+        android:id="@+id/section_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/didTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/did_i_tip"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <EditText
+        android:id="@+id/totalWithoutTipVal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/howMuchTotal"
+        android:layout_alignBottom="@+id/howMuchTotal"
+        android:layout_toRightOf="@+id/didTitle"
+        android:ems="10"
+        android:inputType="numberDecimal" />
+
+    <ImageView
+        android:id="@+id/didHelper"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/didTitle"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/did_helper" />
+
+    <TextView
+        android:id="@+id/howMuchTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/didHelper"
+        android:layout_marginTop="14dp"
+        android:layout_toLeftOf="@+id/totalWithoutTipVal"
+        android:text="What was the total w/o tip? $"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/howMuchTipQuestiong"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/howMuchTotal"
+        android:layout_below="@+id/howMuchTotal"
+        android:layout_marginTop="29dp"
+        android:text="What was the total with tip?$"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <EditText
+        android:id="@+id/totalWithTip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/howMuchTipQuestiong"
+        android:layout_alignBottom="@+id/howMuchTipQuestiong"
+        android:layout_alignLeft="@+id/totalWithoutTipVal"
+        android:ems="10"
+        android:inputType="numberDecimal" />
+
+    <Button
+        android:id="@+id/FigureOutPercent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/howMuchTipQuestiong"
+        android:layout_alignRight="@+id/totalWithTip"
+        android:layout_centerVertical="true"
+        android:text="HOw much did I tip?" />
+
+</RelativeLayout>

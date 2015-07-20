@@ -1,0 +1,117 @@
+package com.example.quadraticsolver;
+
+import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.ActionBar;
+import android.support.v4.app.Fragment;
+import android.content.pm.ActivityInfo;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.os.Build;
+
+public class MainActivity extends ActionBarActivity {
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
+		if (savedInstanceState == null) {
+			getSupportFragmentManager().beginTransaction()
+					.add(R.id.container, new PlaceholderFragment()).commit();
+		}
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.main, menu);
+		return true;
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		// Handle action bar item clicks here. The action bar will
+		// automatically handle clicks on the Home/Up button, so long
+		// as you specify a parent activity in AndroidManifest.xml.
+		int id = item.getItemId();
+		if (id == R.id.action_settings) {
+			return true;
+		}
+		return super.onOptionsItemSelected(item);
+	}
+
+	/**
+	 * A placeholder fragment containing a simple view.
+	 */
+	public static class PlaceholderFragment extends Fragment {
+
+		public PlaceholderFragment() {
+		}
+
+		@Override
+		public View onCreateView(LayoutInflater inflater, ViewGroup container,
+				Bundle savedInstanceState) {
+			View rootView = inflater.inflate(R.layout.fragment_main, container,
+					false);
+			return rootView;
+		}
+	}
+
+	
+	//MY OWN CODE BEGINS NOW
+	public void solveQuadratic(View view) {
+
+		//instantize the EditText into objects for further use
+		EditText A_butt = (EditText) findViewById(R.id.A_button);
+		EditText B_butt = (EditText) findViewById(R.id.B_button);
+		EditText C_butt = (EditText) findViewById(R.id.C_button);
+	
+		//instantize the TextView into objects for further use
+		TextView ans1 = (TextView) findViewById(R.id.answer1);
+		TextView ans2 = (TextView) findViewById(R.id.answer2);
+		
+		String a_temp = A_butt.getText().toString();
+		String b_temp = B_butt.getText().toString();
+		String c_temp = C_butt.getText().toString();
+		
+		//Quadratic equation begins
+		
+		double a_dub = Double.parseDouble(a_temp);  
+		double b_dub = Double.parseDouble(b_temp);
+		double c_dub = Double.parseDouble(c_temp);
+		
+		//do the square root part here
+		
+		double b_squared = Math.pow(b_dub,2);
+		double four_ac = 4 * a_dub * c_dub;
+		double squareRoot = Math.sqrt(b_squared - four_ac);
+		
+		double firstAnswer = (b_dub * (-1)) + squareRoot;
+		double secondAnswer = (b_dub * (-1)) - squareRoot;
+		
+		firstAnswer = firstAnswer / (2*a_dub);
+		secondAnswer = secondAnswer / (2*a_dub);
+		
+		
+		// display answers
+		String first = String.valueOf(firstAnswer);
+		String second = String.valueOf(secondAnswer);
+		
+		ans1.setText("Answer with (+) is " + first);
+		ans2.setText("Answer with (-) is " + second);
+		
+		
+						
+		
+		
+		
+	}
+}
