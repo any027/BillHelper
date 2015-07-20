@@ -7,4 +7,4 @@ The BillHelper App consists of three parts:
 3) I want to split the bill.
 
 All of these three parts should be self explanatory. 
-If ther are any problems please contact this account.
+If there are any problems please contact this account.
